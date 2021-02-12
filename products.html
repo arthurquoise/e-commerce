@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/3c78ab9055.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<header>
+    <nav class="navbar has-background-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item has-text-grey-lighter" href="index.html">
+                    Accueil
+                </a>
+
+                <a class="navbar-item has-text-grey-lighter" href="products.html">
+                    Produits
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link has-text-grey-lighter">
+                        More
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            About
+                        </a>
+                        <a class="navbar-item">
+                            Jobs
+                        </a>
+                        <a class="navbar-item">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Créer un compte</strong>
+                        </a>
+                        <a class="button is-light">
+                            Se connecter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero has-background-grey-lighter is-fullheight-with-navbar">
+        <div class="hero-body">
+            <section class="container">
+                <p class="title has-text-centered">LISTE DES PRODUITS</p>
+                <div class="button-add">
+                    <button class="button is-link">ajouter</button>
+                </div>
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Titre</th>
+                            <th>Catégorie</th>
+                            <th>description</th>
+                            <th>prix</th>
+                            <th>quantité</th>
+                            <th>Modification</th>
+                            <th>Suppression</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <th>01242</th>
+                    <td>caleçon artengo</td>
+                    <td>sous-vêtement</td>
+                    <td>caleçon noir classic</td>
+                    <td>8,50€</td>
+                    <td>250</td>
+                    <td><button class="button is-success">modifier</button></td>
+                    <td><button class="button is-danger">supprimer</button></td>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </section>
+</main>
+<script type="text/javascript" src="lib/main.js"></script>
+</body>
+</html>
