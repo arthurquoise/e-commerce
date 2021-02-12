@@ -80,7 +80,7 @@
             <section class="container">
                 <p class="title has-text-centered">LISTE DES PRODUITS</p>
                 <div class="button-add">
-                    <button class="button is-link">ajouter</button>
+                    <button class="button is-link" id="add-product"></a>ajouter</button>
                 </div>
                 <table class="table is-fullwidth">
                     <thead>
@@ -110,6 +110,93 @@
         </div>
     </section>
 </main>
+
+
+<!-- MODAL ADD PRODUCT -->
+<div class="modal" id="addProduct">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Ajouter un produit</p>
+            <button class="delete" aria-label="close" id="close-addProduct"></button>
+        </header>
+        <section class="modal-card-body">
+            <div class="field">
+                <label class="label">Nom du produit</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="ex : slip">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Catégorie</label>
+                <div class="select">
+                    <select>
+                        <option>Sélectionner</option>
+                        <option>T-shirt</option>
+                        <option>Sous-vêtements</option>
+                        <option>Pantalons</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Description du produit</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="100% coton noir">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Prix</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="€">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Quantité</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="1000">
+                </div>
+            </div>
+
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success">Ajouter</button>
+            <button class="button">Annuler</button>
+        </footer>
+    </div>
+</div>
+<!-- MODAL ADD PRODUCT -->
+
 <script type="text/javascript" src="lib/main.js"></script>
 </body>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyDI7_JUjj_HGaH66LNfQOV9KZALZ35u66Y",
+        authDomain: "e-commerce-2432.firebaseapp.com",
+        projectId: "e-commerce-2432",
+        storageBucket: "e-commerce-2432.appspot.com",
+        messagingSenderId: "670516225481",
+        appId: "1:670516225481:web:f3e90ee0d9f529b451f418",
+        measurementId: "G-HW7F6ZLMT6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    var db = firebase.firestore();
+
+    db.collection("Products").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            console.log(`${doc.id} => ${doc.data().description}`);
+        });
+    });
+</script>
 </html>
